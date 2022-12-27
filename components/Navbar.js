@@ -13,18 +13,19 @@ const Navbar = () => {
     return (
         <nav className='w-full flex justify-evenly items-center p-5
         bg-white/25 backdrop-blur-sm border border-white/20 fixed z-10'>
-            <h1 className='flex-1 text-3xl font-bold text-indigo-700'>Serey Roth</h1>
+            <h1 className='flex-1 text-3xl font-bold text-indigo-700'>Serey</h1>
             <ul className='h-full items-center justify-center gap-3
             hidden lg:flex'>
                 {['home', 'about', 'projects', 'technologies', 'contact'].map(item => (
-                    <li key={`link-${item}`} className='opacity-80 group hover:opacity-100
+                    <li key={`link-${item}`} className='opacity-80 group
+                    group-hover:opacity-100
                     ease-in-out duration-200'>
                         <Link
                             href={`#${item}`}
-                            className='uppercase bg-gray-200/20 px-5 py-3 rounded-l-full
-                            rounded-r-full font-semibold text-gray-500/80 duration-200
-                            ease-in-out group-hover:text-indigo-500 group-hover:underline
-                            underline-offset-8'>
+                            className='uppercase px-5 py-3 rounded-l-full
+                            rounded-r-full font-semibold text-gray-500/80 duration-500
+                            ease-in-out group-hover:bg-gradient-to-r
+                            from-indigo-500/50 to-teal-500/50 group-hover:text-white'>
                             {item}
                         </Link>
                     </li>
