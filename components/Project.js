@@ -6,8 +6,8 @@ import LoadingImage from './LoadingImage'
 
 const Project = ({ project }) => {    
     return (
-        <div className='flex flex-col border drop-shadow-2xl shadow-sm
-        shadow-gray-300 rounded-xl relative'>
+        <div className='flex flex-col border drop-shadow-2xl shadow-xl
+        shadow-black/30 rounded-xl relative group'>
             <h3 className='font-semibold text-xl text-center w-full py-2
             bg-gradient-to-r from-indigo-300 to-teal-300 text-white
             rounded-t-xl'>{project.name}</h3>
@@ -30,6 +30,12 @@ const Project = ({ project }) => {
                     <Link href={project.link_demo}>Demo</Link>
                     <Link href={project.link_source}>Source</Link>
                 </div>
+            </div>
+            <div className='absolute inset-0 bg-black/70 text-white
+            group-hover:opacity-0 group-hover:-z-10 ease-in-out duration-300 rounded-lg
+            break-words'>
+                <h3 className='absolute bottom-4 left-0 right-0
+                font-bold text-5xl pl-2 pb-2'>{project.name}</h3>
             </div>
         </div>
     )
