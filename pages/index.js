@@ -18,7 +18,7 @@ export default function Home({ projects }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className='w-screen min-h-screen'>
+            <main className='w-screen min-h-screen flex flex-col items-center'>
                 <Navbar />
                 <Header />
                 <Projects projects={projects} />
