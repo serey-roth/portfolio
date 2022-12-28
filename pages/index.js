@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 
 import About from '../components/About'
@@ -10,7 +11,59 @@ import Technologies from '../components/Technologies'
 
 import { client } from '../lib/client'
 
+const getSectionIndex = (section) => {
+    switch (section) {
+        case 'about': return 1;
+        case 'technologies': return 2;
+        case 'projects': return 3;
+        case 'contact': return 4;
+        default: return 0;
+    }
+}
+
 export default function Home({ projects, technologies, abouts }) {
+    const headerRef = useRef();
+    const aboutRef = useRef();
+    const technologiesRef = useRef();
+    const projectsRef = useRef();
+    const contactRef = useRef();
+
+    const [currentSection, setCurrentSection] = useState(0);
+
+    const handleObserver = (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+            const sectionIndex = getSectionIndex(entry.target.id);
+            setCurrentSection(sectionIndex);
+        }
+    }
+
+    const handleNavigationDotClick = (index) => {
+        setCurrentSection(index);
+    }
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(handleObserver, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5,
+        });
+
+        if (headerRef.current) observer.observe(headerRef.current);
+        if (aboutRef.current) observer.observe(aboutRef.current);
+        if (technologiesRef.current) observer.observe(technologiesRef.current);
+        if (projectsRef.current) observer.observe(projectsRef.current);
+        if (contactRef.current) observer.observe(contactRef.current);
+
+        return () => {
+            if (headerRef.current) observer.unobserve(headerRef.current);
+            if (aboutRef.current) observer.unobserve(aboutRef.current);
+            if (technologiesRef.current) observer.unobserve(technologiesRef.current);
+            if (projectsRef.current) observer.unobserve(projectsRef.current);
+            if (contactRef.current) observer.unobserve(contactRef.current);
+        }
+    }, [handleObserver])
+
     return (
         <>
             <Head>
@@ -23,13 +76,15 @@ export default function Home({ projects, technologies, abouts }) {
             bg-gradient-to-b from-indigo-500/20'>
                 <Navbar />
                 <div className='fixed top-1/2 right-5 z-[5] -translate-y-1/2'>
-                    <NavigationDots />
+                    <NavigationDots
+                        currentSectionIndex={currentSection}
+                        onClick={handleNavigationDotClick} />
                 </div>
-                <Header />
-                <About abouts={abouts} />
-                <Technologies technologies={technologies} />
-                <Projects projects={projects} />
-                <Footer />
+                <Header ref={headerRef}/>
+                <About ref={aboutRef} abouts={abouts} />
+                <Technologies ref={technologiesRef} technologies={technologies} />
+                <Projects ref={projectsRef} projects={projects} />
+                <Footer ref={contactRef} />
             </main>
         </>
     )
