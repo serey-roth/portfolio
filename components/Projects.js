@@ -1,9 +1,10 @@
 import React from 'react'
 import Project from './Project'
 
-const Projects = ({ projects }) => {
+const Projects = React.forwardRef(({ projects }, ref) => {
     return (
         <div 
+        ref={ref}
         id='projects' 
         className='w-screen min-h-screen pt-20 px-10 xl:w-[80%]'>
             <h1 className='font-bold text-3xl lg:text-5xl py-2 mb-2'>Projects</h1>
@@ -15,6 +16,6 @@ const Projects = ({ projects }) => {
             </div>
         </div>
     )
-}
+});
 
 export default Projects

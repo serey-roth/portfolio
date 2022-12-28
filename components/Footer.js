@@ -11,7 +11,7 @@ const initialFormData = {
     message: '',
 }
 
-const Footer = () => {
+const Footer = React.forwardRef((props, ref) => {
     const [form, setForm] = useState(initialFormData);
 
     const [hasError, setHasError] = useState({
@@ -59,6 +59,7 @@ const Footer = () => {
 
     return (
         <div 
+        ref={ref}
         id='contact' 
         className='relative w-full pt-20 pb-10 px-10 xl:w-[80%]'>
             <h1 className='font-bold text-3xl lg:text-5xl py-2 mb-2'>Contact</h1>
@@ -161,6 +162,6 @@ const Footer = () => {
             </div>
         </div>
     )
-}
+});
 
 export default Footer

@@ -5,9 +5,10 @@ import LoadingImage from './LoadingImage'
 
 import { urlFor } from '../lib/client'
 
-const Technologies = ({ technologies }) => {
+const Technologies = React.forwardRef(({ technologies }, ref) => {
     return (
         <div 
+        ref={ref}
         id='technologies'
         className='w-screen flex flex-col items-center pt-20'>
             <h1 className='w-full font-bold text-3xl lg:text-5xl py-2 mb-5 px-10 xl:w-[80%]'>Technologies</h1>
@@ -27,6 +28,6 @@ const Technologies = ({ technologies }) => {
             </Marquee>
         </div>
     )
-}
+})
 
 export default Technologies

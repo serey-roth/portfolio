@@ -10,9 +10,10 @@ import { motion } from 'framer-motion'
 
 import { urlFor } from '../lib/client'
 
-const Header = () => {
+const Header = React.forwardRef((props, ref) => {
     return (
         <div
+        ref={ref}
         id='home'
         className='w-full h-screen flex flex-col
         items-center justify-center gap-5 lg:gap-10 lg:flex-row pt-20 px-10'>
@@ -68,6 +69,6 @@ const Header = () => {
             </div>
         </div>
     )
-}
+});
 
 export default Header

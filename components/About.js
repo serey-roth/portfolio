@@ -2,9 +2,10 @@ import React from 'react'
 import { urlFor } from '../lib/client'
 import LoadingImage from './LoadingImage'
 
-const About = ({ abouts }) => {
+const About = React.forwardRef(({ abouts }, ref) => {
     return (
         <div 
+        ref={ref}
         id='about' 
         className='w-full pt-20 px-10 xl:w-[80%]'>
             <h1 className='font-bold text-3xl lg:text-5xl py-2 mb-2'>I am a...</h1>
@@ -29,6 +30,6 @@ const About = ({ abouts }) => {
             </div>
         </div>
     )
-}
+});
 
 export default About
