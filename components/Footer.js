@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { AiFillFacebook, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdError } from 'react-icons/md';
+import { client } from '../lib/client'
+import { toast } from 'react-hot-toast';
 
 const initialFormData = {
     name: '',
@@ -28,7 +31,7 @@ const Footer = () => {
                 ...prevData,
                 [e.target.name]: false,
             }));
-        } else {
+        } else if (!e.target.value) {
             setHasError(prevData => ({
                 ...prevData,
                 [e.target.name]: true,
@@ -39,7 +42,19 @@ const Footer = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-
+        if (form.name && form.email && form.message) {
+            const message = { "_type": 'message', ...form }
+            const messagePromise = client.create(message);
+            toast.promise(messagePromise, {
+                loading: 'Sending message...',
+                error: (error) => error.message,
+                success: 'Message sent! Serey will be in touch with you soon.'
+            }, {
+                style: {
+                    maxWidth: '300px',
+                }
+            })
+        }
     }
 
     return (
@@ -135,6 +150,15 @@ const Footer = () => {
                 to-teal-300 text-gray-100 font-semibold mt-5'
                 >Send Message</button>
             </form>
+
+            <div className='flex items-center justify-between mt-5'>
+                <p className='text-sm'>2022 Serey Roth <br /> All Rights Reserved</p>
+                <div className='flex items-center gap-1'>
+                    <AiFillLinkedin className='text-indigo-500 w-[30px] h-[30px]'/>
+                    <AiFillGithub className='text-indigo-500 w-[30px] h-[30px]'/>
+                    <AiFillFacebook className='text-indigo-500 w-[30px] h-[30px]'/>
+                </div>
+            </div>
         </div>
     )
 }
