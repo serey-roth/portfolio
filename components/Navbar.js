@@ -1,7 +1,30 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { HiMenuAlt4, HiX } from 'react-icons/hi'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+
+const variants = {
+    initial: { x: 300, opacity: 0 },
+    animate: {
+        opacity: 1,
+        x: [300, 0],
+        transition: {
+            x: {
+                duration: 0.85,
+                ease: 'easeOut',
+            }
+        }
+    },
+    exit: {
+        x: 300,
+        transition: {
+            x: {
+                duration: 0.85,
+                ease: 'easeOut',
+            }
+        }
+    }
+}
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -40,11 +63,14 @@ const Navbar = () => {
                     onClick={handleToggle}>
                     <HiMenuAlt4 size={15} />
                 </div>
+                <AnimatePresence>
                 {toggle && (
                     <motion.div
-                        initial={{ x: 300 }}
-                        whileInView={{ x: [300, 0] }}
-                        transition={{ duration: 0.85, ease: 'easeOut' }}
+                        key='side-nav-bar'
+                        variants={variants}
+                        initial='initial'
+                        animate='animate'
+                        exit='exit'
                         className='fixed top-0 bottom-0 right-0 z-20
                         w-[80%] h-screen flex flex-col justify-end pl-4
                         items-end drop-shadow-xl bg-indigo-100'
@@ -71,6 +97,7 @@ const Navbar = () => {
                         </ul>
                     </motion.div>
                 )}
+                </AnimatePresence>
             </div>
         </nav>
     )
