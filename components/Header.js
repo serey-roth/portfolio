@@ -14,8 +14,7 @@ const Header = () => {
     return (
         <div
         id='home'
-        className='w-full h-screen flex flex-col bg-gradient-to-b
-        from-indigo-100/10 to-teal-100/10
+        className='w-full h-screen flex flex-col
         items-center justify-center gap-5 lg:gap-10 lg:flex-row pt-20 px-10'>
             <div className='flex flex-col items-center justify-center lg:justify-start
             gap-4 2xl:gap-5 w-full lg:max-w-[450px] 2xl:max-w-[700px]'>
@@ -25,7 +24,7 @@ const Header = () => {
                     <span 
                         className='lg:text-7xl 2xl:text-9xl 
                         bg-clip-text text-transparent 
-                        bg-gradient-to-bl from-indigo-400 to-teal-400'>
+                        bg-gradient-to-tr from-indigo-600 to-teal-300'>
                         <br className='hidden lg:block'/> Serey Roth
                     </span>.
                 </h2>
@@ -51,7 +50,7 @@ const Header = () => {
                 </div>
             </div>
             <div className='relative bg-gradient-to-br from-indigo-900 shadow-inner
-            shadow-blue-900 flex items-center justify-center h-[250px]
+            shadow-black flex items-center justify-center h-[250px]
             rounded-full w-[250px] mobile-lg:w-[300px] mobile-lg:h-[300px]
             md:w-[400px] md:h-[400px] lg:h-[600px] lg:w-[600px] 2xl:w-[900px]
             2xl:h-[900px] overflow-hidden'>
