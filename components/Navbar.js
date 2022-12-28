@@ -13,7 +13,9 @@ const Navbar = () => {
     return (
         <nav className='w-full flex justify-evenly items-center p-5
         bg-white/25 backdrop-blur-sm border border-white/20 fixed z-10'>
-            <h1 className='flex-1 text-3xl font-bold text-indigo-700'>Serey</h1>
+            <h1 className='flex-1 text-4xl font-bold bg-gradient-to-tr
+            from-indigo-500 to-teal-200 bg-clip-text text-transparent
+            uppercase'>Serey</h1>
             <ul className='h-full items-center justify-center gap-3
             hidden lg:flex'>
                 {['home', 'about', 'projects', 'technologies', 'contact'].map(item => (
@@ -23,7 +25,7 @@ const Navbar = () => {
                         <Link
                             href={`#${item}`}
                             className='uppercase px-5 py-3 rounded-l-full
-                            rounded-r-full font-semibold text-gray-500/80 duration-500
+                            rounded-r-full font-semibold text-teal-500/80 duration-500
                             ease-in-out group-hover:bg-gradient-to-r
                             from-indigo-500/50 to-teal-500/50 group-hover:text-white'>
                             {item}
@@ -34,17 +36,18 @@ const Navbar = () => {
             <div className='flex flex-col lg:hidden'>
                 <div
                     className='cursor-pointer w-fit p-2 text-white rounded-full
-                    bg-indigo-600'
+                    bg-teal-500'
                     onClick={handleToggle}>
                     <HiMenuAlt4 size={15} />
                 </div>
                 {toggle && (
                     <motion.div
+                        initial={{ x: 300 }}
                         whileInView={{ x: [300, 0] }}
                         transition={{ duration: 0.85, ease: 'easeOut' }}
-                        className='fixed top-0 bottom-0 right-0 z-20
+                        className='fixed top-0 bottom-0 right-0 z-50
                         w-[80%] h-screen flex flex-col justify-end pl-4
-                        items-end drop-shadow-xl bg-white'
+                        items-end drop-shadow-xl bg-indigo-100'
                     >
                         <div
                             className='cursor-pointer p-5 rounded-full'
@@ -56,7 +59,7 @@ const Navbar = () => {
                         {['home', 'about', 'projects', 'technologies', 'contact'].map(item => (
                             <li key={item}>
                                 <Link
-                                    className='uppercase text-gray-500/80 duration-200
+                                    className='uppercase text-teal-500/80 duration-200
                                     ease-in-out hover:text-indigo-500 hover:underline
                                     underline-offset-8 font-semibold'
                                     href={`#${item}`}
