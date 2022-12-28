@@ -9,7 +9,7 @@ import Technologies from '../components/Technologies'
 
 import { client } from '../lib/client'
 
-export default function Home({ projects, technologies }) {
+export default function Home({ projects, technologies, abouts }) {
     return (
         <>
             <Head>
@@ -22,6 +22,7 @@ export default function Home({ projects, technologies }) {
             bg-gradient-to-b from-indigo-500/20'>
                 <Navbar />
                 <Header />
+                <About abouts={abouts} />
                 <Technologies technologies={technologies} />
                 <Projects projects={projects} />
                 <Footer />
@@ -35,16 +36,18 @@ export async function getServerSideProps() {
         ...,
         "tools":tools[]->{name, icon} 
     }`;
-
     const toolQuery = `*[_type == "tool"]`;
+    const aboutQuery = `*[_type == "about"]`;
     
     const projects = await client.fetch(projectQuery);
     const technologies = await client.fetch(toolQuery);
+    const abouts = await client.fetch(aboutQuery);
 
     return {
         props: {
             projects,
-            technologies
+            technologies,
+            abouts,
         }
     }
 }
