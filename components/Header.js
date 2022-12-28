@@ -43,10 +43,10 @@ const Header = () => {
                 incididunt ut labore et dolore magna aliqua.
                 </p>
                 <div className='flex w-full items-center justify-center lg:justify-start gap-5'>
-                    <AiFillLinkedin size={30} className='text-indigo-900'/>
-                    <AiFillGithub size={30} className='text-indigo-900'/>
-                    <AiFillFacebook size={30} className='text-indigo-900'/>
-                    <AiFillInstagram size={30} className='text-indigo-900'/>
+                    <AiFillLinkedin size={30} className='text-indigo-500'/>
+                    <AiFillGithub size={30} className='text-indigo-500'/>
+                    <AiFillFacebook size={30} className='text-indigo-500'/>
+                    <AiFillInstagram size={30} className='text-indigo-500'/>
                 </div>
             </div>
             <div className='relative bg-gradient-to-br from-indigo-900 shadow-inner
@@ -61,7 +61,7 @@ const Header = () => {
                 height={600}
                 quality={100}
                 priority 
-                className='z-10 absolute bottom-0 lg:bottom-2 lg:scale-110 
+                className='absolute bottom-0 lg:bottom-2 lg:scale-110 
                 xl:scale-90 xl:-bottom-8 2xl:scale-[125%]
                 2xl:bottom-20'
                 />
