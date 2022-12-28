@@ -4,6 +4,7 @@ import About from '../components/About'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
+import NavigationDots from '../components/NavigationDots'
 import Projects from '../components/Projects'
 import Technologies from '../components/Technologies'
 
@@ -21,6 +22,9 @@ export default function Home({ projects, technologies, abouts }) {
             <main className='w-screen min-h-screen flex flex-col items-center
             bg-gradient-to-b from-indigo-500/20'>
                 <Navbar />
+                <div className='fixed top-1/2 right-5 z-[5] -translate-y-1/2'>
+                    <NavigationDots />
+                </div>
                 <Header />
                 <About abouts={abouts} />
                 <Technologies technologies={technologies} />
