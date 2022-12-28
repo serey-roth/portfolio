@@ -44,7 +44,7 @@ const ImageSlider = ({ images }) => {
                 <BsChevronCompactRight size={30} />
             </div>
 
-            <div className='flex absolute bottom-0 justify-center'>
+            <div className='flex absolute -bottom-4 justify-center'>
                 {Array.from(Array(images.length).keys()).map(imageIndex => (
                     <RxDotFilled 
                     key={imageIndex}
