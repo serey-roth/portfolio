@@ -1,9 +1,38 @@
 import React from 'react'
+import Link from 'next/link'
+import { urlFor } from '../lib/client'
+import ImageSlider from './ImageSlider'
+import LoadingImage from './LoadingImage'
 
-const Project = () => {
-  return (
-    <div>Project</div>
-  )
+const Project = ({ project }) => {    
+    return (
+        <div className='flex flex-col border drop-shadow-2xl shadow-sm
+        shadow-gray-300 rounded-xl relative'>
+            <h3 className='font-semibold text-xl text-center w-full py-2
+            bg-gradient-to-r from-indigo-300 to-teal-300 text-white
+            rounded-t-xl'>{project.name}</h3>
+            <ImageSlider
+                images={project.images}
+            />
+            <div className='px-4 py-2 flex flex-col flex-1'>
+                <p className='mb-2 text-lg'>{project.description}</p>
+                <div className='grid grid-cols-4 place-content-start place-items-center 
+                gap-2 py-2 mb-2 flex-1 w-full'>
+                    {project.tools.map(tool => (
+                        <LoadingImage 
+                        src={urlFor(tool.icon).url()}
+                        alt={tool.name}
+                        classes='w-[50px] h-[50px] mobile-lg:w-[55px] mobile-lg:h-[55px]'
+                        />
+                    ))}
+                </div>
+                <div className='flex w-full items-center justify-between'>
+                    <Link href={project.link_demo}>Demo</Link>
+                    <Link href={project.link_source}>Source</Link>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Project
