@@ -45,7 +45,7 @@ const Navbar = () => {
                         initial={{ x: 300 }}
                         whileInView={{ x: [300, 0] }}
                         transition={{ duration: 0.85, ease: 'easeOut' }}
-                        className='fixed top-0 bottom-0 right-0 z-50
+                        className='fixed top-0 bottom-0 right-0 z-20
                         w-[80%] h-screen flex flex-col justify-end pl-4
                         items-end drop-shadow-xl bg-indigo-100'
                     >
