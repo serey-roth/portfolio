@@ -9,7 +9,7 @@ import Technologies from '../components/Technologies'
 
 import { client } from '../lib/client'
 
-export default function Home({ projects }) {
+export default function Home({ projects, technologies }) {
     return (
         <>
             <Head>
@@ -18,11 +18,12 @@ export default function Home({ projects }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className='w-screen min-h-screen flex flex-col items-center'>
+            <main className='w-screen min-h-screen flex flex-col items-center
+            bg-gradient-to-b from-indigo-500/20'>
                 <Navbar />
                 <Header />
+                <Technologies technologies={technologies} />
                 <Projects projects={projects} />
-                <Technologies />
                 <Footer />
             </main>
         </>
@@ -34,12 +35,16 @@ export async function getServerSideProps() {
         ...,
         "tools":tools[]->{name, icon} 
     }`;
+
+    const toolQuery = `*[_type == "tool"]`;
     
     const projects = await client.fetch(projectQuery);
+    const technologies = await client.fetch(toolQuery);
 
     return {
         props: {
-            projects
+            projects,
+            technologies
         }
     }
 }
