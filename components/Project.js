@@ -20,6 +20,7 @@ const Project = ({ project }) => {
                 gap-2 py-2 mb-2 flex-1 w-full'>
                     {project.tools.map(tool => (
                         <LoadingImage 
+                        key={tool.name}
                         src={urlFor(tool.icon).url()}
                         alt={tool.name}
                         classes='w-[50px] h-[50px] mobile-lg:w-[55px] mobile-lg:h-[55px]'
@@ -31,11 +32,11 @@ const Project = ({ project }) => {
                     <Link href={project.link_source}>Source</Link>
                 </div>
             </div>
-            <div className='absolute inset-0 bg-black/70 text-white
+            <div className='absolute inset-0 bg-black/80 text-white backdrop-blur-xl
             group-hover:opacity-0 group-hover:-z-10 ease-in-out duration-300 rounded-lg
             break-words'>
-                <h3 className='absolute bottom-4 left-0 right-0
-                font-bold text-5xl pl-2 pb-2'>{project.name}</h3>
+                <h3 className='absolute bottom-4 left-2 right-0 max-w-[90%]
+                font-bold text-4xl pl-2 pb-2'>{project.name}</h3>
             </div>
         </div>
     )
