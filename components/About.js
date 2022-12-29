@@ -13,7 +13,7 @@ const imageVariants = {
             ease: 'easeInOut'
         }
     }
-}
+};
 
 const aboutVariants = {
     hidden: {
@@ -25,7 +25,7 @@ const aboutVariants = {
             staggerChildren: 500,
         }
     }
-}
+};
 
 const About = React.forwardRef(({ abouts }, ref) => {
     return (
@@ -64,4 +64,4 @@ const About = React.forwardRef(({ abouts }, ref) => {
     )
 });
 
-export default About
+export default About;

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
-import { HiMenuAlt4, HiX } from 'react-icons/hi'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const variants = {
     initial: { x: 300, opacity: 0 },
@@ -24,7 +24,7 @@ const variants = {
             }
         }
     }
-}
+};
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -101,6 +101,6 @@ const Navbar = () => {
             </div>
         </nav>
     )
-}
+};
 
-export default Navbar
+export default Navbar;

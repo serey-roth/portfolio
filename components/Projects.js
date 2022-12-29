@@ -1,5 +1,5 @@
-import React from 'react'
-import Project from './Project'
+import React from 'react';
+import Project from './Project';
 
 const Projects = React.forwardRef(({ projects }, ref) => {
     return (
@@ -18,4 +18,4 @@ const Projects = React.forwardRef(({ projects }, ref) => {
     )
 });
 
-export default Projects
+export default Projects;

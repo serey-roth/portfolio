@@ -46,11 +46,11 @@ const ImageSlider = ({ images }) => {
 
     const handleNextImage = () => {
         paginate(1);
-    }
+    };
 
     const handlePreviousImage = () => {
         paginate(-1);
-    }
+    };
 
     return (
         <div className='w-full m-auto relative flex flex-col items-center

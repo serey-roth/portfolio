@@ -1,5 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from 'react';
+import { motion } from 'framer-motion';
 import { urlFor } from '../lib';
 
 const imageContainer = {
@@ -14,7 +14,7 @@ const imageContainer = {
             ease: "easeInOut"
         }
     }
-}
+};
 
 const imageVariants = {
     hidden: {
@@ -30,7 +30,7 @@ const imageVariants = {
             ease: 'easeInOut'
         }
     }
-}
+};
 
 const renderTechIcons = (techs) => (
     <motion.div
@@ -52,7 +52,7 @@ const renderTechIcons = (techs) => (
             />
         ))}
     </motion.div>
-)
+);
 
 const Technologies = React.forwardRef(({ technologies }, ref) => {
     return (
@@ -79,6 +79,6 @@ const Technologies = React.forwardRef(({ technologies }, ref) => {
             </div>
         </div>
     )
-})
+});
 
-export default Technologies
+export default Technologies;

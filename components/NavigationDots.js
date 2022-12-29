@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Link from 'next/link';
-import { RxDotFilled } from 'react-icons/rx';
+import { RxDotFilled } from 'react-icons/rx';;
 
 const NavigationDots = ({ currentSectionIndex, onClick}) => {
     return (
@@ -18,6 +18,6 @@ const NavigationDots = ({ currentSectionIndex, onClick}) => {
             ))}
         </div>
     )
-}
+};
 
-export default NavigationDots
+export default NavigationDots;

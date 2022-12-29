@@ -1,9 +1,9 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-import { urlFor } from '../lib'
-import ImageSlider from './ImageSlider'
+import { urlFor } from '../lib';
+import ImageSlider from './ImageSlider';
 
 const Project = ({ project }) => {    
     return (
@@ -43,6 +43,6 @@ const Project = ({ project }) => {
             </div>
         </div>
     )
-}
+};
 
-export default Project
+export default Project;
