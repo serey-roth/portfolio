@@ -52,13 +52,14 @@ export default function Home({ projects, technologies, abouts }) {
                     ref={aboutRef} 
                     abouts={abouts} />
 
-                <Technologies 
-                    ref={technologiesRef} 
-                    technologies={technologies} />
 
                 <Projects 
                     ref={projectsRef} 
                     projects={projects} />
+
+                <Technologies 
+                    ref={technologiesRef} 
+                    technologies={technologies} />
 
                 <Footer ref={contactRef} />
             </main>
