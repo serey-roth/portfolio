@@ -7,7 +7,7 @@ import {
     About, 
     Technologies, 
     Projects, 
-    Footer 
+    Contact 
 } from '../components';
 
 import { 
@@ -61,7 +61,7 @@ export default function Home({ heroes, projects, technologies, abouts }) {
                     ref={technologiesRef} 
                     technologies={technologies} />
 
-                <Footer ref={contactRef} />
+                <Contact ref={contactRef} />
             </main>
         </>
     )

@@ -11,7 +11,7 @@ const initialFormData = {
     message: '',
 }
 
-const Footer = React.forwardRef((props, ref) => {
+const Contact = React.forwardRef((props, ref) => {
     const [form, setForm] = useState(initialFormData);
 
     const [hasError, setHasError] = useState({
@@ -164,4 +164,4 @@ const Footer = React.forwardRef((props, ref) => {
     )
 });
 
-export default Footer
+export default Contact;
