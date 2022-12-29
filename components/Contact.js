@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { AiFillFacebook, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdError } from 'react-icons/md';
-import { client } from '../lib/client'
+
+import { client, GITHUB, FACEBOOK, LINKEDIN } from '../lib'
 import { toast } from 'react-hot-toast';
 
 const initialFormData = {
@@ -61,8 +63,8 @@ const Contact = React.forwardRef((props, ref) => {
         <div 
         ref={ref}
         id='contact' 
-        className='relative w-full pt-20 pb-10 px-10 xl:w-[80%]'>
-            <h1 className='font-bold text-3xl lg:text-5xl py-2 mb-2'>Contact</h1>
+        className='section mb-10'>
+            <h1 className='section-heading'>Let&apos;s Connect!</h1>
             <div className='flex flex-col w-full gap-2 sm:grid grid-cols-2'>
                 <div className='flex w-full gap-1 items-center sm:justify-center
                 rounded-lg bg-gray-200/30 p-2'>
@@ -73,7 +75,9 @@ const Contact = React.forwardRef((props, ref) => {
                     height={35}
                     className='sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px]'
                     />
-                    <a className='text-sm sm:text-lg' href='mailto:sereyratanakroth@gmail.com'>sereyratanakroth@gmail.com</a>
+                    <a 
+                    className='text-sm sm:text-lg lg:text-xl' 
+                    href='mailto:sereyratanakroth@gmail.com'>sereyratanakroth@gmail.com</a>
                 </div>
                 <div className='flex w-full gap-1 items-center rounded-lg
                 sm:justify-center bg-gray-200/30 p-2'>
@@ -84,11 +88,13 @@ const Contact = React.forwardRef((props, ref) => {
                     height={35}
                     className='sm:w-[50px] sm:h-[50px] lg:w-[70px] lg:h-[70px]'
                     />
-                    <a className='text-sm sm:text-lg' href='tel:+1(425)2198352'>(+1) (425)219-8352</a>
+                    <a 
+                    className='text-sm sm:text-lg lg:text-xl' 
+                    href='tel:+1(425)2198352'>(+1) (425)219-8352</a>
                 </div>
             </div>
             <form 
-            className='flex flex-col w-full gap-2 mt-10'
+            className='flex flex-col w-full gap-2 mt-10 lg:text-xl 2xl:text-2xl'
             onSubmit={handleSubmit}>
                 <div className='relative w-full'>
                     <input 
@@ -153,11 +159,25 @@ const Contact = React.forwardRef((props, ref) => {
             </form>
 
             <div className='flex items-center justify-between mt-5'>
-                <p className='text-sm'>2022 Serey Roth <br /> All Rights Reserved</p>
-                <div className='flex items-center gap-1'>
-                    <AiFillLinkedin className='text-indigo-500 w-[30px] h-[30px]'/>
-                    <AiFillGithub className='text-indigo-500 w-[30px] h-[30px]'/>
-                    <AiFillFacebook className='text-indigo-500 w-[30px] h-[30px]'/>
+                <p className='text-sm md:text-md xl:text-xl'>
+                    2022 Serey Roth <br /> All Rights Reserved
+                </p>
+                <div className='flex items-center gap-2'>
+                    <Link href={LINKEDIN}>
+                        <AiFillLinkedin 
+                        className='text-indigo-500 w-[25px] h-[25px] md:w-[40px] 
+                        md:h-[40px] 2xl:w-[50px] 2xl:h-[50px] drop-shadow-xl'/>
+                    </Link>
+                    <Link href={GITHUB}>
+                        <AiFillGithub 
+                        className='text-indigo-500 w-[25px] h-[25px] md:w-[40px] 
+                        md:h-[40px] 2xl:w-[50px] 2xl:h-[50px] drop-shadow-xl'/>
+                    </Link>
+                    <Link href={FACEBOOK}>
+                        <AiFillFacebook 
+                        className='text-indigo-500 w-[25px] h-[25px] md:w-[40px] 
+                        md:h-[40px] 2xl:w-[50px] 2xl:h-[50px] drop-shadow-xl'/>
+                    </Link>
                 </div>
             </div>
         </div>
