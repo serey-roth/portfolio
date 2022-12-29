@@ -33,9 +33,7 @@ const About = React.forwardRef(({ abouts }, ref) => {
         ref={ref}
         id='about' 
         className='section'>
-            <h1 className='font-bold text-3xl lg:text-5xl py-2 mb-2'>
-                I am a...
-            </h1>
+            <h1 className='section-heading'>I am a...</h1>
             <div className='flex w-full flex-col md:flex-row md:flex-wrap items-center md:items-start
             justify-center gap-4 pt-10'>
                 {abouts.map((item, index) => (
@@ -52,9 +50,11 @@ const About = React.forwardRef(({ abouts }, ref) => {
                             src={urlFor(item.icon).url()}
                             alt={item.title}
                             className='max-w-[100px] max-h-[100px]
-                            md:max-w-[150px] md:max-h-[150px] drop-shadow-xl' />
-                        <h3 className='font-semibold text-xl md:text-2xl capitalize'>{item.title}</h3>
-                        <p>
+                            md:max-w-[150px] md:max-h-[150px]
+                            xl:max-w-[180px] xl:max-h-[180px] drop-shadow-xl' />
+                        <h3 className='font-semibold text-xl md:text-2xl 2xl:text-3xl
+                        capitalize'>{item.title}</h3>
+                        <p className='w-full xl:text-xl 2xl:text-2xl text-center '>
                         {item.description}
                         </p>
                     </motion.div>
