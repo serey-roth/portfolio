@@ -55,7 +55,8 @@ const ImageSlider = ({ images }) => {
     return (
         <div className='w-full m-auto relative flex flex-col items-center
         justify-center px-4 py-2 mb-3'>
-            <div className='w-full my-2 h-[150px] mobile-lg:h-[160px] md:h-[190px] 2xl:h-[250px] relative'>
+            <div className='w-full my-2 h-[150px] mobile-lg:h-[160px] md:h-[190px] 
+            xl:h-[250px] relative'>
                 <AnimatePresence custom={direction}>
                     <motion.img
                         className='max-w-full absolute w-full h-full rounded-lg drop-shadow-xl'
