@@ -34,7 +34,7 @@ const Project = ({ project }) => {
             </div>
             <div className='absolute inset-0 bg-black/80 text-white backdrop-blur-xl
             group-hover:opacity-0 group-hover:-z-10 ease-in-out duration-300 rounded-lg
-            break-words'>
+            break-words z-[5]'>
                 <h3 className='absolute bottom-4 left-2 right-0 max-w-[90%]
                 font-bold text-4xl pl-2 pb-2'>{project.name}</h3>
             </div>
