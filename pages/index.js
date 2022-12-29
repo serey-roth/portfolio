@@ -41,7 +41,7 @@ export default function Home({ heroes, projects, technologies, abouts }) {
             bg-gradient-to-b from-indigo-500/20'>
                 <Navbar />
 
-                <div className='fixed top-1/2 right-5 z-[5] -translate-y-1/2'>
+                <div className='fixed top-1/2 right-2 z-[5] -translate-y-1/2'>
                     <NavigationDots
                         currentSectionIndex={currentSection}
                         onClick={onChangeCurrentSection} />
