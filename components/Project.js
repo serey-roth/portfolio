@@ -31,8 +31,12 @@ const Project = ({ project }) => {
                     ))}
                 </div>
                 <div className='flex w-full items-center justify-between'>
-                    <Link href={project.link_demo}>Demo</Link>
-                    <Link href={project.link_source}>Source</Link>
+                    <Link 
+                    className='font-semibold text-lg'
+                    href={project.link_demo}>Demo</Link>
+                    <Link 
+                    className='font-semibold text-lg'
+                    href={project.link_source}>Source</Link>
                 </div>
             </div>
             <div className='absolute inset-0 bg-black/80 text-white backdrop-blur-xl
