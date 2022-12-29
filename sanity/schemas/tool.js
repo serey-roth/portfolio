@@ -9,12 +9,17 @@ export default {
             type: 'string',
         },
         {
+            name: 'type', 
+            title: 'Type',
+            type: 'string',
+        },
+        {
             name: 'icon', 
             title: 'Icon',
             type: 'image',
             options: {
                 hotspot: true,
             }
-        }
+        },
     ]
-}
+};
