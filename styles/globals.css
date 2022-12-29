@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@400;500;600;700;800&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  font-family: 'K2D', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 @tailwind base;
@@ -9,7 +15,17 @@
 @tailwind utilities; 
 
 @layer utilities {
-    .section {
-        @apply w-full flex flex-col pt-20 px-10 xl:w-[80%];
-    }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-tr
+    from-indigo-600 to-teal-300;
+  }
+
+  .section {
+    @apply w-full flex flex-col pt-20 px-10 lg:px-12 xl:w-[80%];
+  }
+
+  .section-heading {
+    @apply font-bold text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl 
+    py-2 mb-4 xl:mb-8 text-gradient drop-shadow-2xl
+  }
 }
