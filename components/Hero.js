@@ -110,7 +110,7 @@ const Hero = React.forwardRef(({
                 shadow-black flex items-center justify-center h-[250px]
                 rounded-full w-[250px] mobile-lg:w-[300px] mobile-lg:h-[300px]
                 md:w-[400px] md:h-[400px] lg:w-[420px] lg:h-[420px]
-                xl:w-[600px] xl:h-[600px] 2xl:w-[900px]
+                xl:w-[540px] xl:h-[540px] 2xl:w-[900px]
                 2xl:h-[900px] overflow-hidden'>
                     <Image
                     src={urlFor(photo).url()}
