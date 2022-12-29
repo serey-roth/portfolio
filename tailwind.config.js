@@ -9,7 +9,6 @@ module.exports = {
         'mobile-lg': '425px',
         'xl': '1100px',
         '2xl': '2000px',
-
       },
     },
   },
