@@ -53,7 +53,6 @@ export default function Home({ heroes, projects, technologies, abouts }) {
                     ref={aboutRef} 
                     abouts={abouts} />
 
-
                 <Projects 
                     ref={projectsRef} 
                     projects={projects} />
