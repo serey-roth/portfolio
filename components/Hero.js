@@ -1,16 +1,16 @@
-import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
 import { 
     AiFillLinkedin, 
     AiFillGithub, 
     AiFillFacebook, 
     AiFillInstagram 
-} from 'react-icons/ai'
-import { motion } from 'framer-motion'
+} from 'react-icons/ai';
+import { motion } from 'framer-motion';
 
-import { urlFor } from '../lib/client'
+import { urlFor } from '../lib/client';
 
-const Header = React.forwardRef((props, ref) => {
+const Hero = React.forwardRef((props, ref) => {
     return (
         <div
         ref={ref}
@@ -71,4 +71,4 @@ const Header = React.forwardRef((props, ref) => {
     )
 });
 
-export default Header
+export default Hero;
