@@ -60,11 +60,9 @@ const Technologies = React.forwardRef(({ technologies }, ref) => {
         ref={ref}
         id='technologies'
         className='section'>
-            <h1 className='font-bold text-3xl lg:text-5xl py-2 mb-2'>
-                Technologies
-            </h1>
+            <h1 className='section-heading'>Toolbox</h1>
             <div 
-            className='w-full flex flex-col py-10 md:flex-row md:flex-wrap gap-5
+            className='w-full flex flex-col md:flex-row md:flex-wrap gap-5
             items-center md:items-start justify-center'>
                 {Object.entries(technologies).map(([key, values]) => (
                     <div 
