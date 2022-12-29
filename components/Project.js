@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import { urlFor } from '../lib/client'
+import Image from 'next/image'
+
+import { urlFor } from '../lib'
 import ImageSlider from './ImageSlider'
-import LoadingImage from './LoadingImage'
 
 const Project = ({ project }) => {    
     return (
@@ -16,14 +17,16 @@ const Project = ({ project }) => {
             />
             <div className='px-4 py-2 flex flex-col flex-1'>
                 <p className='mb-2 text-lg'>{project.description}</p>
-                <div className='grid grid-cols-4 place-content-start place-items-center 
-                gap-2 py-2 mb-2 flex-1 w-full'>
+                <div className='grid grid-cols-4 place-content-start 
+                place-items-center gap-2 py-2 mb-2 flex-1 w-full'>
                     {project.tools.map(tool => (
-                        <LoadingImage 
+                        <Image
                         key={tool.name}
                         src={urlFor(tool.icon).url()}
                         alt={tool.name}
-                        classes='w-[50px] h-[50px] mobile-lg:w-[55px] mobile-lg:h-[55px]'
+                        width={200}
+                        height={200}
+                        classes='max-w-[50px] max-h-[50px]'
                         />
                     ))}
                 </div>
