@@ -29,12 +29,11 @@ const aboutVariants = {
 
 const About = React.forwardRef(({ abouts }, ref) => {
     return (
-        <div 
+        <div
         ref={ref}
         id='about' 
-        className='w-full flex flex-col pt-20 px-10 xl:w-[80%]'>
-            <h1
-            className='font-bold text-3xl lg:text-5xl py-2 mb-2'>
+        className='section'>
+            <h1 className='font-bold text-3xl lg:text-5xl py-2 mb-2'>
                 I am a...
             </h1>
             <div className='flex w-full flex-col md:flex-row md:flex-wrap items-center md:items-start

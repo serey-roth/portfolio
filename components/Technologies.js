@@ -48,7 +48,7 @@ const renderTechIcons = (techs) => (
                 key={tech.name}
                 src={urlFor(tech.icon).url()}
                 alt={tech.name}
-                className='max-w-full scale-95 drop-shadow-xl'
+                className='max-w-full drop-shadow-xl'
             />
         ))}
     </motion.div>
@@ -59,16 +59,17 @@ const Technologies = React.forwardRef(({ technologies }, ref) => {
         <div 
         ref={ref}
         id='technologies'
-        className='w-full flex flex-col pt-20 px-10 xl:w-[80%]'>
+        className='section'>
             <h1 className='font-bold text-3xl lg:text-5xl py-2 mb-2'>
                 Technologies
             </h1>
             <div 
-            className='w-full flex flex-col md:grid grid-cols-2 lg:grid-cols-4 gap-4'>
+            className='w-full flex flex-col py-10 md:flex-row md:flex-wrap gap-5
+            items-center md:items-start justify-center'>
                 {Object.entries(technologies).map(([key, values]) => (
                     <div 
                     key={key}
-                    className='flex flex-col items-center gap-4 p-4'>
+                    className='w-full md:w-[300px] flex flex-col items-center gap-5 p-4'>
                         <h3 className='font-semibold text-xl md:text-2xl'>
                             {key}
                         </h3>
