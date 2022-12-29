@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { 
     Navbar, 
     NavigationDots, 
-    Header, 
+    Hero, 
     About, 
     Technologies, 
     Projects, 
@@ -11,19 +11,20 @@ import {
 } from '../components';
 
 import { 
+    getHeroes,
     getProjects, 
     getTechnologies, 
     getAbouts,
-    useCurrentSection
+    useCurrentSection,
 } from '../lib';
 
-export default function Home({ projects, technologies, abouts }) {
+export default function Home({ heroes, projects, technologies, abouts }) {
     const { 
         currentSection,
         aboutRef,
         technologiesRef,
         projectsRef,
-        headerRef,
+        heroRef,
         contactRef,
         onChangeCurrentSection,
     } = useCurrentSection();
@@ -46,7 +47,7 @@ export default function Home({ projects, technologies, abouts }) {
                         onClick={onChangeCurrentSection} />
                 </div>
 
-                <Header ref={headerRef}/>
+                <Hero hero={heroes[0]} ref={heroRef}/>
 
                 <About 
                     ref={aboutRef} 
@@ -68,12 +69,14 @@ export default function Home({ projects, technologies, abouts }) {
 };
 
 export async function getServerSideProps() {
+    const heroes = await getHeroes();
     const projects = await getProjects();
     const technologies = await getTechnologies();
     const abouts = await getAbouts();
     
     return {
         props: {
+            heroes,
             projects,
             technologies,
             abouts,
