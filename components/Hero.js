@@ -131,7 +131,7 @@ const Hero = React.forwardRef(({
                 className='relative flex items-center justify-center h-[250px]
                 rounded-full w-[250px] mobile-lg:w-[300px] mobile-lg:h-[300px]
                 md:w-[330px] md:h-[330px] lg:w-[450px] lg:h-[450px]
-                xl:w-[480px] xl:h-[480px] 2xl:w-[800px] 2xl:h-[800px] overflow-hidden
+                xl:w-[500px] xl:h-[500px] 2xl:w-[800px] 2xl:h-[800px] overflow-hidden
                 bg-gradient-to-br from-indigo-900 dark:from-indigo-500 shadow-inner
                 shadow-black dark:shadow-indigo-600 '>
                     <Image
