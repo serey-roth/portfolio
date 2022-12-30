@@ -23,6 +23,11 @@ export default {
             of : [{
                 type: 'string',
             }]
+        },
+        {
+            name: 'resume',
+            title: 'Resume',
+            type: 'file',
         }
     ]
 };
