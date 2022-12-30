@@ -46,7 +46,7 @@ const Hero = React.forwardRef(({
             initial='hidden'
             animate='show'
             className='flex flex-col items-center justify-center gap-5
-            lg:grid grid-cols-2 lg:place-content-center w-full relative'>
+            lg:grid grid-cols-2 lg:place-content-center w-full relative px-1'>
                 <div className='flex flex-col items-center justify-center lg:justify-start
                 gap-5'>
                     <motion.h2
@@ -55,28 +55,29 @@ const Hero = React.forwardRef(({
                     md:text-5xl 2xl:text-8xl text-center lg:text-left w-full'>
                         Hi! I am
                         <span
-                        className='text-4xl md:text-6xl lg:text-7xl 2xl:text-9xl text-gradient'>
-                            <br className='hidden lg:block' /> Serey Roth
+                        className='text-4xl mobile-lg:text-5xl lg:text-7xl 2xl:text-9xl text-gradient'>
+                            <br className='block' /> Serey Roth
                         </span>.
                     </motion.h2>
                     <motion.div
                     variants={opacityVariants}
-                    className='flex w-full items-start justify-center 
+                    className='flex flex-wrap w-full items-start justify-center 
                     lg:justify-start gap-2 2xl:text-3xl'>
                         {tags.map((title, index) => (
                             <p
                             key={index}
                             className='w-fit text-center capitalize 
                             rounded-l-full rounded-r-full drop-shadow-2xl
-                            bg-teal-500 text-white font-semibold
-                            px-3 py-2 2xl:px-5 2xl:py-4'>
+                            bg-teal-500 text-white font-semibold text-sm
+                            p-2 2xl:px-5 2xl:py-4 shadow-inner shadow-black
+                            mobile-lg:text-lg md:text-xl mobile-lg:px-3'>
                                 {title}
                             </p>
                         ))}
                     </motion.div>
                     <motion.p
                     variants={opacityVariants}
-                    className='w-full md:max-w-[80%] self-center lg:max-w-[400px] 
+                    className='w-full sm:max-w-[70%] self-center lg:max-w-[400px] 
                     text-center text-lg lg:text-xl lg:text-left 2xl:text-2xl 
                     lg:self-start font-semibold text-indigo-800 drop-shadow-xl
                     dark:text-gray-200'>
