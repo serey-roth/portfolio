@@ -73,10 +73,11 @@ const Navbar = () => {
                     ease-in-out duration-200'>
                         <Link
                             href={`#${item}`}
-                            className='uppercase px-5 py-3 rounded-l-full
-                            rounded-r-full font-semibold text-teal-500/80 duration-500
-                            ease-in-out group-hover:bg-gradient-to-r from-indigo-500
-                            to-teal-500 group-hover:text-white xl:text-xl 2xl:text-2xl'>
+                            className='uppercase p-3 xl:px-5 rounded-l-full
+                            rounded-r-full font-semibold text-teal-600
+                            duration-500 ease-in-out group-hover:bg-gradient-to-r
+                            from-indigo-500 to-teal-500 group-hover:text-white 
+                            lg:text-xl 2xl:text-2xl dark:text-teal-400'>
                             {item}
                         </Link>
                     </li>
