@@ -11,7 +11,7 @@ const variants = {
         opacity: 1,
         x: ['100%', '0%'],
         transition: {
-            delay: index * 0.2,
+            delay: index * 0.1,
             x: {
                 duration: 0.85,
                 ease: 'easeOut',
