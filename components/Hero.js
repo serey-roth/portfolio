@@ -40,7 +40,7 @@ const Hero = React.forwardRef(({
         <div
         ref={ref}
         id='home'
-        className='section min-h-screen items-center justify-center'>
+        className='section h-screen items-center justify-center'>
             <motion.div
             variants={containerVariants}
             initial='hidden'
