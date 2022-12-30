@@ -36,8 +36,7 @@ const DarkModeToggler = () => {
                 <motion.img
                 src={isDarkMode ? '/sun.png' : '/moon.png'}
                 alt='dark-mode-icon'
-                className={`max-w-[35px] md:max-w-[40px]
-                ${!isDarkMode && 'scale-90'}`} />
+                className={`max-w-[35px] ${!isDarkMode && 'scale-90'}`} />
             </motion.div>
         </div>
     )
