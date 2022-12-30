@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { SECTIONS } from '../lib';
 import DarkModeToggler from './DarkModeToggler';
 
-const divVariants = {
+const variants = {
     initial: { x: '100%', opacity: 0 },
     animate: (index) => ({
         opacity: 1,
@@ -18,38 +18,17 @@ const divVariants = {
             }
         }
     }),
-    exit: {
-        x: '100%',
+    exit: (index) => ({
+        x: ['0%', '100%'],
         transition: {
+            delay: 0.05 * index,
             x: {
                 duration: 0.85,
-                ease: 'easeOut',
+                ease: 'easeIn',
             }
         }
-    }
+    })
 };
-
-const ulVariants = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.3
-        }
-    },
-    exit: {
-        opacity: 0,
-        transition: {
-            staggerChildren: 0.3
-        }
-    }
-}
-
-const liVariants = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-    exit: { opacity: 0 },
-}
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -98,8 +77,8 @@ const Navbar = () => {
                     <div>
                         <motion.div
                             key='side-nav-bar'
-                            variants={divVariants}
-                            custom={1}
+                            variants={variants}
+                            custom={0.5}
                             initial='initial'
                             animate='animate'
                             exit='exit'
@@ -117,16 +96,16 @@ const Navbar = () => {
                                 <HiX size={30} />
                             </div>
                             <motion.ul 
-                            variants={ulVariants}
-                            initial='hidden'
-                            animate='show'
-                            exit='exit'
+                            key='link-list'
+                            variants={variants}
+                            custom={0.8}
                             className='w-full h-full flex flex-col items-start 
                             justify-start gap-4'>
-                            {SECTIONS.map(item => (
+                            {SECTIONS.map((item, index) => (
                                 <motion.li 
                                 key={item}
-                                variants={liVariants}>
+                                custom={0.95 + index}
+                                variants={variants}>
                                     <Link
                                         className='uppercase text-gray-100 duration-200
                                         ease-in-out hover:text-gradient hover:underline
@@ -141,7 +120,7 @@ const Navbar = () => {
                         </motion.div>
                         <motion.div
                             key='side-nav-bar-overlay'
-                            variants={divVariants}
+                            variants={variants}
                             custom={0}
                             initial='initial'
                             animate='animate'
