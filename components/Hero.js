@@ -40,7 +40,7 @@ const Hero = React.forwardRef(({
         <div
         ref={ref}
         id='home'
-        className='section mb-10 min-h-screen items-center justify-center'>
+        className='section min-h-screen items-center justify-center'>
             <motion.div
             variants={containerVariants}
             initial='hidden'
@@ -139,6 +139,7 @@ const Hero = React.forwardRef(({
                     alt='headshot'
                     width={400}
                     height={400}
+                    priority
                     className='absolute bottom-0 xl:scale-[110%] xl:bottom-2
                     2xl:scale-[180%] 2xl:bottom-[9rem]'
                     />
