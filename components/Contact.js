@@ -68,7 +68,8 @@ const Contact = React.forwardRef((props, ref) => {
             <h1 className='section-heading'>Let&apos;s Connect!</h1>
             <div className='flex flex-col w-full gap-2 sm:grid grid-cols-2'>
                 <div className='flex w-full gap-1 items-center sm:justify-center
-                rounded-lg bg-gray-200/30 dark:bg-white/90 dark:text-black p-2'>
+                rounded-lg bg-gray-200/30 dark:bg-teal-200
+                dark:shadow-inner dark:shadow-black dark:text-black p-2'>
                     <Image 
                     src='/mail.png'
                     alt='email-icon'
@@ -81,7 +82,8 @@ const Contact = React.forwardRef((props, ref) => {
                     href='mailto:sereyratanakroth@gmail.com'>sereyratanakroth@gmail.com</a>
                 </div>
                 <div className='flex w-full gap-1 items-center rounded-lg
-                sm:justify-center bg-gray-200/30 dark:bg-white/90 dark:text-black p-2'>
+                sm:justify-center bg-gray-200/30 dark:bg-teal-200
+                dark:shadow-inner dark:shadow-black dark:text-black p-2'>
                     <Image 
                     src='/phone.png'
                     alt='phone-icon'
@@ -107,7 +109,8 @@ const Contact = React.forwardRef((props, ref) => {
                         onChange={handleChange}
                         className='w-full rounded-lg appearance-none outline-none
                         focus:ring-inset focus:bg-gray-200/50 duration-200
-                        ease-in bg-gray-200/30 dark:bg-white/90 dark:text-black px-2 py-3'
+                        ease-in bg-gray-200/30 dark:bg-teal-200
+                        dark:shadow-inner dark:shadow-black dark:text-black px-2 py-3'
                     />
                     {hasError.name && (
                         <MdError className='text-rose-500 w-[20px] h-[20px] absolute
@@ -125,7 +128,8 @@ const Contact = React.forwardRef((props, ref) => {
                         onChange={handleChange}
                         className='w-full rounded-lg appearance-none outline-none
                         focus:ring-inset focus:bg-gray-200/50 duration-200
-                        ease-in bg-gray-200/30 dark:bg-white/90 dark:text-black px-2 py-3'
+                        ease-in bg-gray-200/30 dark:bg-teal-200
+                        dark:shadow-inner dark:shadow-black dark:text-black px-2 py-3'
                     />
                     {hasError.email && (
                         <MdError className='text-rose-500 w-[20px] h-[20px] absolute
@@ -144,7 +148,8 @@ const Contact = React.forwardRef((props, ref) => {
                         onChange={handleChange}
                         className='w-full rounded-lg appearance-none outline-none
                         focus:ring-inset focus:bg-gray-200/60 duration-200
-                        ease-in bg-gray-200/30 dark:bg-white/90 dark:text-black px-2 py-3'
+                        ease-in bg-gray-200/30 dark:bg-teal-200
+                        dark:shadow-inner dark:shadow-black dark:text-black px-2 py-3'
                     />
                     {hasError.message && (
                         <MdError className='text-rose-500 w-[20px] h-[20px] absolute
