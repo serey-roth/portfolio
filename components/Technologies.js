@@ -2,72 +2,56 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { urlFor } from '../lib';
 
-const imageContainer = {
-    hidden: {
-        opacity: 0,
-    },
-    show: {
-        opacity: 1,
-        transition: {
-            delayChildren: 1000,
-            staggerChildren: 5000,
-            ease: "easeInOut"
-        }
-    }
-};
-
 const imageVariants = {
     hidden: {
+        opacity: 0,
         scale: 0,
     },
-    show: {
+    show: (index) => ({
+        opacity: 1,
         scale: 1,
-    },
-    hover: {
-        scale: 1.1,
         transition: {
-            duration: 0.2,
+            delay: index * 0.1,
+            duration: 0.3,
             ease: 'easeInOut'
         }
-    }
+    })
 };
 
 const renderTechIcons = (techs) => (
-    <motion.div
-        variants={imageContainer}
-        initial='hidden'
-        whileInView='show'
-        className='w-full grid grid-cols-3 gap-4 
-        place-items-center place-content-center'>
-        {techs.map(tech => (
+    <div className='w-full grid grid-cols-3 gap-4 
+    place-items-center place-content-center'>
+        {techs.map((tech, index) => (
             <motion.img
+                custom={index}
                 variants={imageVariants}
                 initial='hidden'
                 whileInView='show'
-                whileHover='hover'
                 key={tech.name}
                 src={urlFor(tech.icon).url()}
                 alt={tech.name}
                 className='max-w-full drop-shadow-xl'
             />
         ))}
-    </motion.div>
+    </div>
 );
 
 const Technologies = React.forwardRef(({ technologies }, ref) => {
     return (
-        <div 
-        ref={ref}
-        id='technologies'
-        className='section'>
+        <div
+            ref={ref}
+            id='technologies'
+            className='section'>
             <h1 className='section-heading'>Toolbox</h1>
-            <div 
-            className='w-full flex flex-col md:flex-row md:flex-wrap gap-5
-            items-center md:items-start justify-center'>
+            <div className='w-full flex flex-col md:flex-row md:flex-wrap gap-5
+            items-center md:items-stretch justify-center dark:bg-gradient-to-b 
+            dark:from-indigo-700 dark:to-indigo-200 dark:px-5 dark:py-8 dark:rounded-3xl
+            dark:shadow-[inset_0px_0px_10px_10px_#000] dark:gap-2'>
                 {Object.entries(technologies).map(([key, values]) => (
-                    <div 
-                    key={key}
-                    className='w-full md:w-[300px] flex flex-col items-center gap-5 p-4'>
+                    <div
+                        key={key}
+                        className='relative w-full md:w-[300px] flex flex-col items-center 
+                    gap-5 p-4'>
                         <h3 className='font-semibold text-xl md:text-2xl'>
                             {key}
                         </h3>

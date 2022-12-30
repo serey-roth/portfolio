@@ -38,7 +38,7 @@ export default function Home({ heroes, projects, technologies, abouts }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className='w-screen min-h-screen flex flex-col items-center
-            bg-gradient-to-b from-indigo-500/20'>
+            bg-gradient-to-b from-indigo-500/20 dark:bg-black dark:text-gray-200'>
                 <Navbar />
 
                 <div className='fixed top-1/2 right-2 z-[5] -translate-y-1/2'>

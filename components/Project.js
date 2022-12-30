@@ -7,16 +7,18 @@ import ImageSlider from './ImageSlider';
 
 const Project = ({ project }) => {    
     return (
-        <div className='flex flex-col border drop-shadow-2xl shadow-xl
-        shadow-black/30 rounded-xl relative group'>
+        <div className='flex flex-col drop-shadow-2xl shadow-sm
+        shadow-black/30 dark:shadow-gray-400 rounded-xl relative 
+        group bg-gradient-to-b from-indigo-900 dark:from-indigo-700
+        dark:to-indigo-200'>
             <h3 className='font-semibold text-xl text-center w-full py-2
-            bg-gradient-to-r from-indigo-300 to-teal-300 text-white
-            rounded-t-xl'>{project.name}</h3>
+            text-white rounded-t-xl md:text-2xl'>{project.name}</h3>
             <ImageSlider
                 images={project.images}
             />
             <div className='px-4 py-2 flex flex-col flex-1'>
-                <p className='mb-2 text-lg'>{project.description}</p>
+                <p className='mb-4 text-lg md:text-xl text-center
+                w-full text-white'>{project.description}</p>
                 <div className='grid grid-cols-4 place-content-start 
                 place-items-center gap-2 py-2 mb-2 flex-1 w-full'>
                     {project.tools.map(tool => (
@@ -30,7 +32,8 @@ const Project = ({ project }) => {
                         />
                     ))}
                 </div>
-                <div className='flex w-full items-center justify-between'>
+                <div className='flex w-full items-center justify-between
+                 dark:text-indigo-700'>
                     <Link 
                     className='font-semibold text-lg'
                     href={project.link_demo}>Demo</Link>
@@ -39,7 +42,7 @@ const Project = ({ project }) => {
                     href={project.link_source}>Source</Link>
                 </div>
             </div>
-            <div className='absolute inset-0 bg-black/80 text-white backdrop-blur-xl
+            <div className='absolute inset-0 bg-teal-900/80 text-white backdrop-blur-xl
             group-hover:opacity-0 group-hover:-z-10 ease-in-out duration-300 rounded-lg
             break-words z-[5]'>
                 <h3 className='absolute bottom-4 left-2 right-0 max-w-[90%]

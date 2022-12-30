@@ -76,9 +76,10 @@ const Hero = React.forwardRef(({
                     </motion.div>
                     <motion.p 
                     variants={opacityVariants}
-                    className='w-full lg:max-w-[400px] text-center text-lg 
-                    lg:text-xl lg:text-left 2xl:text-2xl self-start font-semibold
-                    text-indigo-800 drop-shadow-xl'>
+                    className='w-full md:max-w-[80%] self-center lg:max-w-[400px] 
+                    text-center text-lg lg:text-xl lg:text-left 2xl:text-2xl 
+                    lg:self-start font-semibold text-indigo-800 drop-shadow-xl
+                    dark:text-gray-200'>
                         {description}
                     </motion.p>
                     <motion.div
@@ -106,12 +107,12 @@ const Hero = React.forwardRef(({
                 <motion.div 
                 variants={opacityVariants}
                 initial='initial'
-                className='relative bg-gradient-to-br from-indigo-900 shadow-inner
-                shadow-black flex items-center justify-center h-[250px]
+                className='relative flex items-center justify-center h-[250px]
                 rounded-full w-[250px] mobile-lg:w-[300px] mobile-lg:h-[300px]
                 md:w-[400px] md:h-[400px] lg:w-[420px] lg:h-[420px]
-                xl:w-[540px] xl:h-[540px] 2xl:w-[900px]
-                2xl:h-[900px] overflow-hidden'>
+                xl:w-[540px] xl:h-[540px] 2xl:w-[900px] 2xl:h-[900px] overflow-hidden
+                bg-gradient-to-br from-indigo-900 dark:from-indigo-500 shadow-inner
+                shadow-black dark:shadow-indigo-600 '>
                     <Image
                     src={urlFor(photo).url()}
                     alt='headshot' 
