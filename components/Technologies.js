@@ -7,15 +7,14 @@ const imageVariants = {
         opacity: 0,
         scale: 0,
     },
-    show: (index) => ({
+    show: {
         opacity: 1,
         scale: 1,
         transition: {
-            delay: index * 0.1,
             duration: 0.3,
             ease: 'easeInOut'
         }
-    })
+    }
 };
 
 const renderTechIcons = (techs) => (
@@ -26,7 +25,6 @@ const renderTechIcons = (techs) => (
             key={tech.name}
             className='w-full relative group'>
                 <motion.img
-                    custom={index}
                     variants={imageVariants}
                     initial='hidden'
                     whileInView='show'
