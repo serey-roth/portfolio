@@ -68,7 +68,7 @@ export default function Home({ heroes, projects, technologies, abouts }) {
     )
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const heroes = await getHeroes();
     const projects = await getProjects();
     const technologies = await getTechnologies();
